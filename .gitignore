@@ -14,6 +14,10 @@
 *.ninja
 .ninja*
 .dirstamp
+CMakeCache.txt
+CMakeFiles/*
+cef-bootstrap-thing
+cmake_install.cmake
 
 #xcode
 *.xcodeproj/

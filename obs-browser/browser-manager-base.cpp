@@ -240,7 +240,7 @@ void BrowserManager::Impl::SendKeyClick(int browserIdentifier,
 		e.type = keyUp ? KEYEVENT_KEYUP : KEYEVENT_RAWKEYDOWN;
 		
 		if (event->text) {
-			char16 *characters;
+			wchar_t *characters;
 			os_utf8_to_wcs_ptr(event->text, 0, &characters);
 			if (characters) {
 				e.character = characters[0];

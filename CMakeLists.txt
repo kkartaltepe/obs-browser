@@ -4,6 +4,9 @@ project(cef-isolation)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}")
 set(CMAKE_INCLUDE_CURRENT_DIR TRUE)
+list(APPEND CMAKE_CXX_FLAGS "-std=c++0x ${CMAKE_CXX_FLAGS}")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build)
 
 include(BSUtils)
 
@@ -262,10 +265,10 @@ if (APPLE)
 
 endif(APPLE)
 
-if(APPLE)
-	install_obs_plugin_with_data(obs-browser data)
-	install_obs_plugin_bundle(cef-isolation "CEF.app")
-else(APPLE)
-	install_obs_plugin_with_data(obs-browser data)
-	install_obs_plugin(cef-bootstrap)
-endif(APPLE)
+#if(APPLE)
+	#install_obs_plugin_with_data(obs-browser data)
+	#install_obs_plugin_bundle(cef-isolation "CEF.app")
+#else(APPLE)
+	#install_obs_plugin_with_data(obs-browser data)
+	#install_obs_plugin(cef-bootstrap)
+#endif(APPLE)
